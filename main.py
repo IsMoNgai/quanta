@@ -1,1 +1,1 @@
-print("world");
+print("world")
