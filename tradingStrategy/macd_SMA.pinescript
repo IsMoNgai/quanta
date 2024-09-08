@@ -1,0 +1,56 @@
+//@version=5
+strategy("SMA Crossover Strategy with Slope and MACD Condition", overlay=true)
+
+// Calculate Simple Moving Averages
+sma5 = ta.sma(close, 5)
+sma10 = ta.sma(close, 10)
+sma20 = ta.sma(close, 20)
+
+// sma60 = ta.sma(close, 60)
+// sma120 = ta.sma(close, 120)
+// sma240 = ta.sma(close, 240)
+
+// Calculate SMAs from 2 days ago for slope comparison
+sma5_prev = ta.sma(close[2], 5)
+sma10_prev = ta.sma(close[2], 10)
+sma20_prev = ta.sma(close[2], 20)
+
+// Plot SMAs
+plot(sma5, color=color.blue, title="SMA 5")
+plot(sma10, color=color.red, title="SMA 10")
+plot(sma20, color=color.green, title="SMA 20")
+
+// Define MACD settings
+[macdLine, signalLine, macdHist] = ta.macd(close, 12, 26, 9)
+
+// MACD histogram turning from negative to positive
+macdHistPrev = ta.valuewhen(macdHist[1] < 0, macdHist[1], 1)
+macdHistCurrent = macdHist
+
+macdCondition = macdHistPrev < 0 and macdHistCurrent > 0 and macdLine > 0 and signalLine > 0
+
+// Volume condition: Today's volume must be greater than yesterday's volume
+volumeCondition = volume > volume[1]
+
+// Define Stochastic settings
+kLine = ta.stoch(close, high, low, 9)
+dLine = ta.sma(kLine, 3) // %D line is a 3-period SMA of %K
+
+// Define Stochastic condition: K > D and both K and D are less than 80
+stochasticCondition = kLine < 80 and dLine < 80
+
+priceCondition = close > close[1]
+
+SMACondition = (close > sma5 and close > sma10 and close > sma20) and (sma5 > sma5_prev and sma10 > sma10_prev and sma20 > sma20_prev) and (sma5 > sma10 and sma10 > sma20)
+
+// Define buy and sell conditions
+longCondition = SMACondition and priceCondition and stochasticCondition and macdCondition and volumeCondition
+shortCondition = close < sma5
+
+// Enter long position if conditions are met
+if (longCondition)
+    strategy.entry("Long", strategy.long, 1000)
+
+// Close long position if sell conditions are met
+if (shortCondition)
+    strategy.close("Long")
