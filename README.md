@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/2ceac865-d1fc-46e2-8894-6c25a477d5a9)
+
+
 PineScripts for Trading Algorithms and Chart UI
 
 This repository contains Pine Script algorithms for trading strategies and a custom chart UI built using Lightweight Charts. The chart data is provided by the Interactive Brokers API (IBAPI), allowing for real-time market analysis. The scripts also include calculations for the slope of moving averages, enhancing technical analysis and strategy development on the TradingView platform.
