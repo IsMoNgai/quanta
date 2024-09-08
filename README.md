@@ -14,3 +14,6 @@ Executing Trades:
 Buy Option: Press Shift + O to perform a buy option.
 Sell Option: Press Shift + P to perform a sell option.
 Customization: You can customize the hotkeys or other functionalities by modifying the code directly to suit your trading preferences.
+
+Tutorial:
+https://youtu.be/k7FhgR5fHCs
