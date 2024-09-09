@@ -1,0 +1,55 @@
+(venv) PS C:\Users\momon\OneDrive\Documents\GitHub\quanta> python main.py
+2024-09-09 03:13:43.148426: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-09-09 03:13:44.168483: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-09-09 03:13:50.302834: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+C:\Users\momon\OneDrive\Documents\GitHub\quanta\venv\lib\site-packages\keras\src\layers\rnn\rnn.py:204: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+Epoch 1/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 4s 1ms/step - loss: 0.0212  
+Epoch 2/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 6.1664e-04  
+Epoch 3/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 3s 1ms/step - loss: 5.9763e-04  
+Epoch 4/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 3s 1ms/step - loss: 5.5138e-04
+Epoch 5/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 4.7467e-04  
+Epoch 6/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 4.0990e-04  
+Epoch 7/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 3s 2ms/step - loss: 5.8104e-04  
+Epoch 8/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 3.6964e-04  
+Epoch 9/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 2.7650e-04  
+Epoch 10/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 3s 1ms/step - loss: 2.7537e-04    
+Epoch 11/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 3.4032e-04  
+Epoch 12/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 4.3559e-04  
+Epoch 13/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 3.6394e-04  
+Epoch 14/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 3s 1ms/step - loss: 3.7374e-04  
+Epoch 15/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 3.9902e-04  
+Epoch 16/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 3s 1ms/step - loss: 4.1199e-04  
+Epoch 17/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 3.1143e-04  
+Epoch 18/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 2.9816e-04  
+Epoch 19/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 3.0728e-04  
+Epoch 20/20
+1868/1868 ━━━━━━━━━━━━━━━━━━━━ 2s 1ms/step - loss: 5.0893e-04  
+15/15 ━━━━━━━━━━━━━━━━━━━━ 0s 1ms/step - loss: 3.7339e-04  
+Test Loss: 0.00034970123670063913
+15/15 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step 
+Predicted: 171.64132690429688, Actual: 170.84
+Predicted: 171.20140075683594, Actual: 170.59
+Predicted: 171.14285278320312, Actual: 171.65
+Predicted: 172.153564453125, Actual: 171.14
+Predicted: 171.6195068359375, Actual: 172.73999999999998
