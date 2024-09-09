@@ -250,6 +250,14 @@ def on_horizontal_line_move(chart, line):
 #     finally:
 #         print("done")
 
+# save data to csv file
+def save_data_to_csv(df):
+    # Generate a unique filename based on the current timestamp
+    filename = f"historical_data_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+    # Save the DataFrame to a CSV file
+    df.to_csv(filename, index=False)
+    print(f"Data saved to {filename}")
+
 
 # called when we want to update what is rendered on the chart 
 def update_chart():
@@ -267,6 +275,7 @@ def update_chart():
         # once we have received all the data, convert to pandas dataframe
         df = pd.DataFrame(bars)
         print(df)
+        save_data_to_csv(df)
 
         # set the data on the chart
         chart.set(df)
